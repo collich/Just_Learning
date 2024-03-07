@@ -7,5 +7,5 @@ Just a repo to hold myself accountable to keep learning as well as keeping track
 
 ## Currently Learning:
 1. Java
-
+1.1 Added SpringBoot to understand the design standpoint for SpringBoot.
 
