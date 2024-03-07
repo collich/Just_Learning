@@ -6,6 +6,7 @@ public class Vehicle {
     private String color;
     private String brand;
     private boolean availability;
+    private String name = "Vehicle";
 
     // Constructor
     // Method Overloading
@@ -50,6 +51,10 @@ public class Vehicle {
     public boolean getAvailability(){
         return this.availability;
     }
+    public String getName(){
+        return this.name;
+    }
+
 
     //Setter functions
     public void setWeight(double weight){
@@ -63,6 +68,15 @@ public class Vehicle {
     }
     public void setAvailability(boolean availability){
         this.availability = availability;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
+
+    // General Method for this class
+    public void printAvailbility(){
+        String sentence = String.format("This %s availability is %b", getName(), getAvailability());
+        System.out.println(sentence);
     }
 
 }

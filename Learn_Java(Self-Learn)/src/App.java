@@ -1,12 +1,21 @@
 import java.util.List;
 
 import The_Basic.Basic;
+import oop_concepts.Car;
 import oop_concepts.Vehicle;
 
 public class App {
     public static void main(String[] args) throws Exception {
+        // Vehicle v_1 = new Vehicle(100, "Red", "Ford", true);
+        // System.out.println(v_1.getBrand());
+        
+        // v_1.setBrand("BMW");
+        // System.out.println(v_1.getBrand());
+        // v_1.printAvailbility();
+        Car c_1 = new Car(100, "Red", "Ford", true);
+        c_1.printAvailbility();
     }
-    
+
     
     // Dumping ground of knowledge
     public void oldMethods(){
