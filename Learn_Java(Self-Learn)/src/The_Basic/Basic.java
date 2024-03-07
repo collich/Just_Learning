@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Basic {
-    // Types
+    // Types + Encapsulation
     private int age = 69420;
     private String name = "Collin";
     private Double digits = 3.142;
