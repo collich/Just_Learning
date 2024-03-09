@@ -1,6 +1,10 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 import The_Basic.Basic;
 import oop_concepts.Car;
@@ -9,6 +13,46 @@ import oop_concepts.Vehicle;
 
 public class App {
     public static void main(String[] args) throws Exception {
+        /* Collections Framwork*/
+        // Creating a list
+        List<String> my_list_of_pl = new ArrayList<>();
+        my_list_of_pl.add("Python");
+        my_list_of_pl.add("JavaScript");
+        my_list_of_pl.add("Ruby");
+        my_list_of_pl.add("GoLang");
+        my_list_of_pl.add("Java");
+        System.out.println("\nLooping through a list/array: ");
+
+        // To loop a list
+        for (String string : my_list_of_pl) {
+            System.out.println(string);
+        }
+
+        // Creating a set
+        Set<Integer> my_new_set = new HashSet<>();
+        my_new_set.add(10);
+        my_new_set.add(20);
+        my_new_set.add(30);
+        System.out.println("\nLooping through a set: ");
+        
+        // To loop through a set
+        for (Integer integer : my_new_set) {
+            System.out.println(integer);
+        }
+        
+        // Creating a Map (key-value)
+        Map<String, Integer> my_keyvalue_map = new HashMap<>();
+        my_keyvalue_map.put("John",10);
+        my_keyvalue_map.put("Bobby",30);
+        my_keyvalue_map.put("Claire",50);
+        my_keyvalue_map.put("Diane",95);
+        
+        System.out.println("\nLooping through Hashmap: ");
+        // for looping through each map
+        for (Map.Entry<String, Integer> entry : my_keyvalue_map.entrySet()) {
+            System.out.println(entry.getKey() + " => " + entry.getValue());
+        }
+
     }
     
     
