@@ -1,3 +1,4 @@
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -14,15 +15,20 @@ import oop_concepts.Vehicle;
 
 public class App {
     public static void main(String[] args) throws Exception {
+        // --------------------
         /* File Handling */
         // Writing File
-        FileHandling writeFile = new FileHandling();
-        writeFile.writeFile("Test_File.txt", "This is my very first text. Hello There!");
+        FileHandling file_Handling = new FileHandling();
+        file_Handling.writeFile("Test_File.txt", "This is my very first text. Hello There!");
+
+        // Read file
+        file_Handling.readFile("Test_File.txt");
     }
     
     
     // Dumping ground of knowledge
     public void oldMethods(){
+        // --------------------
         // System.out.println("Hello, World!");
         
         // Instantilise Object class
@@ -43,6 +49,7 @@ public class App {
             System.out.println(i);
         }
         
+        // --------------------
         // Classes and Object
         Vehicle v_1 = new Vehicle(100, "Red", "Ford", true);
         System.out.println(v_1.getBrand());
@@ -62,6 +69,9 @@ public class App {
         Dog clover = new Dog("Clover", "Minced Meat");
         clover.makeSound();
         
+        
+        // --------------------
+        /* Try Catch */
         // Try... Catch block
         try {
             /* ---Test case 1 for try...catch--- */
@@ -122,46 +132,49 @@ public class App {
             // Test case 1 for try...catch
             // System.out.println("Value cannot be divided by 0!");
             System.out.println("Hold up...Something ain't right");
-
-            /* Collections Framwork*/
-            // Creating a list
-            List<String> my_list_of_pl = new ArrayList<>();
-            my_list_of_pl.add("Python");
-            my_list_of_pl.add("JavaScript");
-            my_list_of_pl.add("Ruby");
-            my_list_of_pl.add("GoLang");
-            my_list_of_pl.add("Java");
-            System.out.println("\nLooping through a list/array: ");
             
-            // To loop a list
-            for (String string : my_list_of_pl) {
-                System.out.println(string);
-            }
-            
-            // Creating a set
-            Set<Integer> my_new_set = new HashSet<>();
-            my_new_set.add(10);
-            my_new_set.add(20);
-            my_new_set.add(30);
-            System.out.println("\nLooping through a set: ");
-            
-            // To loop through a set
-            for (Integer integer : my_new_set) {
-                System.out.println(integer);
-            }
-            
-            // Creating a Map (key-value)
-            Map<String, Integer> my_keyvalue_map = new HashMap<>();
-            my_keyvalue_map.put("John",10);
-            my_keyvalue_map.put("Bobby",30);
-            my_keyvalue_map.put("Claire",50);
-            my_keyvalue_map.put("Diane",95);
-            
-            System.out.println("\nLooping through Hashmap: ");
-            // for looping through each map
-            for (Map.Entry<String, Integer> entry : my_keyvalue_map.entrySet()) {
-                System.out.println(entry.getKey() + " => " + entry.getValue());
-            }
+        }
+        
+        
+        // --------------------
+        /* Collections Framwork*/
+        // Creating a list
+        List<String> my_list_of_pl = new ArrayList<>();
+        my_list_of_pl.add("Python");
+        my_list_of_pl.add("JavaScript");
+        my_list_of_pl.add("Ruby");
+        my_list_of_pl.add("GoLang");
+        my_list_of_pl.add("Java");
+        System.out.println("\nLooping through a list/array: ");
+        
+        // To loop a list
+        for (String string : my_list_of_pl) {
+            System.out.println(string);
+        }
+        
+        // Creating a set
+        Set<Integer> my_new_set = new HashSet<>();
+        my_new_set.add(10);
+        my_new_set.add(20);
+        my_new_set.add(30);
+        System.out.println("\nLooping through a set: ");
+        
+        // To loop through a set
+        for (Integer integer : my_new_set) {
+            System.out.println(integer);
+        }
+        
+        // Creating a Map (key-value)
+        Map<String, Integer> my_keyvalue_map = new HashMap<>();
+        my_keyvalue_map.put("John",10);
+        my_keyvalue_map.put("Bobby",30);
+        my_keyvalue_map.put("Claire",50);
+        my_keyvalue_map.put("Diane",95);
+        
+        System.out.println("\nLooping through Hashmap: ");
+        // for looping through each map
+        for (Map.Entry<String, Integer> entry : my_keyvalue_map.entrySet()) {
+            System.out.println(entry.getKey() + " => " + entry.getValue());
 
         }
     }
