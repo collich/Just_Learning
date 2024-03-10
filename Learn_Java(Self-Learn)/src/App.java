@@ -19,7 +19,7 @@ public class App {
         /* File Handling */
         // Writing File
         FileHandling file_Handling = new FileHandling();
-        file_Handling.writeFile("Test_File.txt", "This is my very first text. Hello There!");
+        file_Handling.writeFile("Test_File.txt", "This is my very first text. Hello There!\nMore Lines Added\nThank you");
 
         // Read file
         file_Handling.readFile("Test_File.txt");

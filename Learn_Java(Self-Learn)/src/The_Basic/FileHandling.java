@@ -20,8 +20,11 @@ public class FileHandling {
     public void readFile(String filename){
         try (BufferedReader rb = new BufferedReader(new FileReader(filename))){
             // String readFile = rb.read();
-            String readFile = rb.readLine();
-            System.out.println(readFile);
+            String readFileLine;
+            while ((readFileLine = rb.readLine()) != null) {
+                System.out.println(readFileLine);
+            }
+            // System.out.println(readFile);
             rb.close();
         } catch (Exception e) {
             e.printStackTrace();
