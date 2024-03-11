@@ -1,4 +1,3 @@
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -17,12 +16,43 @@ public class App {
     public static void main(String[] args) throws Exception {
         // --------------------
         /* File Handling */
-        // Writing File
-        FileHandling file_Handling = new FileHandling();
-        file_Handling.writeFile("Test_File.txt", "This is my very first text. Hello There!\nMore Lines Added\nThank you");
+        try {
+            Scanner fileScanner = new Scanner(System.in);
+            Character caseInput;
 
-        // Read file
-        file_Handling.readFile("Test_File.txt");
+            System.out.println("What would you like to do: (Write/[W], Read/[R], Add Line/[A])");
+            caseInput = fileScanner.nextLine().toUpperCase().charAt(0);
+            switch (caseInput) {
+                case 'W':
+                    System.out.println("What's your file name: ");
+                    String filename = fileScanner.nextLine();
+
+                    System.out.println("What is the line you want to write: ");
+                    String bodyContext = fileScanner.nextLine();
+
+                    // Writing File
+                    FileHandling file_Handling = new FileHandling();
+                    file_Handling.writeFile(filename, bodyContext);
+                    fileScanner.close();
+            
+                // case 'R':
+                    
+                //     break;
+            
+                // case 'A':
+                    
+                //     break;
+            
+                default:
+                    break;
+            }
+
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+
+        // // Read file
+        // file_Handling.readFile("Test_File.txt");
     }
     
     

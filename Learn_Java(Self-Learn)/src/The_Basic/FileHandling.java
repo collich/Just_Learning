@@ -11,6 +11,8 @@ public class FileHandling {
     public void writeFile(String fileName, String bodyContext){
         try (BufferedWriter wb = new BufferedWriter(new FileWriter(fileName))){
             wb.write(bodyContext);
+            String fileNameCreation = String.format("File, %s, have been created with\n%s\nAs it's context", fileName, bodyContext);
+            System.out.println(fileNameCreation);
             wb.close();
         } catch (IOException e) {
             e.printStackTrace();
