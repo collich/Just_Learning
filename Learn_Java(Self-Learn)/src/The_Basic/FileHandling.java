@@ -45,4 +45,12 @@ public class FileHandling {
         }
     }
 
+    public void replaceFile(String filename, String bodyContext){
+        try {
+            
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+    }
+
 }

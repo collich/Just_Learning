@@ -15,7 +15,7 @@ import oop_concepts.Vehicle;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        // --------------------
+                // --------------------
         /* File Handling */
         try {
             FileHandling file_Handling = new FileHandling();
@@ -23,71 +23,66 @@ public class App {
             Character caseInput;
             String filename;
             String bodyContext;
-
-            System.out.println("What would you like to do: (Write/[W], Read/[R], Add Line/[A])");
+            
+            System.out.println("What would you like to do: (Write/[W], Read/[R], Add Line/[A], Replace/[P])");
             caseInput = fileScanner.nextLine().toUpperCase().charAt(0);
+
+            System.out.println("What's your file name: ");
+            filename = fileScanner.nextLine();
             // Let user interact with the program
             switch (caseInput) {
+                /* Write Case */
                 case 'W':
-                    System.out.println("What's your file name: ");
-                    filename = fileScanner.nextLine();
-                    
+                System.out.println("What is the line you want to write: ");
+                bodyContext = fileScanner.nextLine();
+                // Writing File
+                file_Handling.writeFile(filename, bodyContext);
+
+                /* Read Case */
+                case 'R':
+                // Read file
+                file_Handling.readFile(filename);
+                
+                // Append Case
+                case 'A':
+                List<String> list_of_sentence = new ArrayList<>();
+                boolean conditional_while = true;
+                Character continueQuestionMark;
+                
+                while (conditional_while) {
                     System.out.println("What is the line you want to write: ");
                     bodyContext = fileScanner.nextLine();
                     
-                    // Writing File
-                    file_Handling.writeFile(filename, bodyContext);
-
+                    file_Handling.appendFile(filename, bodyContext);
                     
-                case 'R':
-                    file_Handling = new FileHandling();
+                    list_of_sentence.add(bodyContext);
                     
-                    System.out.println("What's your file name: ");
-                    filename = fileScanner.nextLine();
+                    System.out.println("Do you want to continue adding? [Y/N]");
+                    continueQuestionMark = fileScanner.nextLine().toUpperCase().charAt(0);
                     
-                    // Read file
-                    file_Handling.readFile(filename);
-                    
-                case 'A':
-                    List<String> list_of_sentence = new ArrayList<>();
-                    boolean conditional_while = true;
-                    Character continueQuestionMark;
-
-                    System.out.println("What's your file name: ");
-                    filename = fileScanner.nextLine();
-                    
-                    while (conditional_while) {
-                        System.out.println("What is the line you want to write: ");
-                        bodyContext = fileScanner.nextLine();
-                        
-                        file_Handling.appendFile(filename, bodyContext);
-
-                        list_of_sentence.add(bodyContext);
-
-                        System.out.println("Do you want to continue adding? [Y/N]");
-                        continueQuestionMark = fileScanner.nextLine().toUpperCase().charAt(0);
-
-                        if (continueQuestionMark == 'N'){
-                            conditional_while = false;
-                        }
+                    if (continueQuestionMark == 'N'){
+                        conditional_while = false;
                     }
+                }
+                
+                System.out.println("The sentence that have been added:");
+                for (String string : list_of_sentence) {
+                    System.out.println(string);
+                }
 
-                    System.out.println("The sentence that have been added:");
-                    for (String string : list_of_sentence) {
-                        System.out.println(string);
-                    }
-
+                case 'P':
+                    
+                
                 // default:
                 //     break;
                 
             }
             fileScanner.close();
-
+            
         } catch (Exception e) {
             // System.out.println("File unable to be open or does not exist: " + e.getMessage());
             // e.printStackTrace();
         }
-
     }
     
     
@@ -240,7 +235,9 @@ public class App {
         // for looping through each map
         for (Map.Entry<String, Integer> entry : my_keyvalue_map.entrySet()) {
             System.out.println(entry.getKey() + " => " + entry.getValue());
-
+            
         }
+        
+
     }
 }
