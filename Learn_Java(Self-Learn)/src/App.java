@@ -17,27 +17,34 @@ public class App {
         // --------------------
         /* File Handling */
         try {
+            FileHandling file_Handling = new FileHandling();
             Scanner fileScanner = new Scanner(System.in);
             Character caseInput;
+            String filename;
 
             System.out.println("What would you like to do: (Write/[W], Read/[R], Add Line/[A])");
             caseInput = fileScanner.nextLine().toUpperCase().charAt(0);
+            // Let user interact with the program
             switch (caseInput) {
                 case 'W':
                     System.out.println("What's your file name: ");
-                    String filename = fileScanner.nextLine();
-
+                    filename = fileScanner.nextLine();
+                    
                     System.out.println("What is the line you want to write: ");
                     String bodyContext = fileScanner.nextLine();
-
+                    
                     // Writing File
-                    FileHandling file_Handling = new FileHandling();
                     file_Handling.writeFile(filename, bodyContext);
                     fileScanner.close();
-            
-                // case 'R':
                     
-                //     break;
+                case 'R':
+                    file_Handling = new FileHandling();
+                
+                    System.out.println("What's your file name: ");
+                    filename = fileScanner.nextLine();
+
+                    // Read file
+                    file_Handling.readFile(filename);
             
                 // case 'A':
                     
@@ -51,8 +58,6 @@ public class App {
             // TODO: handle exception
         }
 
-        // // Read file
-        // file_Handling.readFile("Test_File.txt");
     }
     
     
