@@ -31,7 +31,16 @@ public class FileHandling {
             System.out.println("\nEnd--Of--File");
             // System.out.println(readFile);
             rb.close();
-        } catch (Exception e) {
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void appendFile(String filename, String bodyContext){
+        try (BufferedWriter af = new BufferedWriter(new FileWriter(filename, true))){
+            af.write("\n" + bodyContext);
+            af.close();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

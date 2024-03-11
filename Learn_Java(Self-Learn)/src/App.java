@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -21,6 +22,7 @@ public class App {
             Scanner fileScanner = new Scanner(System.in);
             Character caseInput;
             String filename;
+            String bodyContext;
 
             System.out.println("What would you like to do: (Write/[W], Read/[R], Add Line/[A])");
             caseInput = fileScanner.nextLine().toUpperCase().charAt(0);
@@ -31,31 +33,59 @@ public class App {
                     filename = fileScanner.nextLine();
                     
                     System.out.println("What is the line you want to write: ");
-                    String bodyContext = fileScanner.nextLine();
+                    bodyContext = fileScanner.nextLine();
                     
                     // Writing File
                     file_Handling.writeFile(filename, bodyContext);
-                    fileScanner.close();
+
                     
                 case 'R':
                     file_Handling = new FileHandling();
-                
+                    
                     System.out.println("What's your file name: ");
                     filename = fileScanner.nextLine();
-
+                    
                     // Read file
                     file_Handling.readFile(filename);
-            
-                // case 'A':
                     
+                case 'A':
+                    List<String> list_of_sentence = new ArrayList<>();
+                    boolean conditional_while = true;
+                    Character continueQuestionMark;
+
+                    System.out.println("What's your file name: ");
+                    filename = fileScanner.nextLine();
+                    
+                    while (conditional_while) {
+                        System.out.println("What is the line you want to write: ");
+                        bodyContext = fileScanner.nextLine();
+                        
+                        file_Handling.appendFile(filename, bodyContext);
+
+                        list_of_sentence.add(bodyContext);
+
+                        System.out.println("Do you want to continue adding? [Y/N]");
+                        continueQuestionMark = fileScanner.nextLine().toUpperCase().charAt(0);
+
+                        if (continueQuestionMark == 'N'){
+                            conditional_while = false;
+                        }
+                    }
+
+                    System.out.println("The sentence that have been added:");
+                    for (String string : list_of_sentence) {
+                        System.out.println(string);
+                    }
+
+                // default:
                 //     break;
-            
-                default:
-                    break;
+                
             }
+            fileScanner.close();
 
         } catch (Exception e) {
-            // TODO: handle exception
+            // System.out.println("File unable to be open or does not exist: " + e.getMessage());
+            // e.printStackTrace();
         }
 
     }
