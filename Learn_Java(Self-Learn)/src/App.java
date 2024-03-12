@@ -43,7 +43,7 @@ public class App {
                 // Read file
                 file_Handling.readFile(filename);
                 
-                // Append Case
+                /* Append Case */
                 case 'A':
                 List<String> list_of_sentence = new ArrayList<>();
                 boolean conditional_while = true;
@@ -70,9 +70,9 @@ public class App {
                     System.out.println(string);
                 }
 
+                /* Replace Case */
                 case 'P':
-                    
-                
+                    file_Handling.replaceFile(filename);
                 // default:
                 //     break;
                 
