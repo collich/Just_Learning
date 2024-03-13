@@ -45,9 +45,18 @@ public class FileHandling {
         }
     }
 
-    public void replaceFile(String filename, String bodyContext){
+    public void replaceFile(String filename){
         try {
-            
+            BufferedReader rf = new BufferedReader(new FileReader(filename));
+            StringBuilder buildStrings = new StringBuilder();
+            String line;
+
+            while ((line = rf.readLine()) != null) {
+                buildStrings.append(line);
+            }
+            rf.close();
+            System.out.println(buildStrings);
+
         } catch (Exception e) {
             // TODO: handle exception
         }

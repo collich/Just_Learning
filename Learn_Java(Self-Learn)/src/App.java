@@ -71,7 +71,7 @@ public class App {
                 }
 
                 case 'P':
-                    
+                    file_Handling.replaceFile(filename);
                 
                 // default:
                 //     break;
