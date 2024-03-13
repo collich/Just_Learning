@@ -69,11 +69,16 @@ public class App {
                 for (String string : list_of_sentence) {
                     System.out.println(string);
                 }
-
+                
                 /* Replace Case */
                 case 'P':
-                    file_Handling.replaceFile(filename);
-                    
+                    System.out.println("What is the word to replace:");
+                    bodyContext = fileScanner.nextLine();
+
+                    System.out.println("What is the word to replace the existing word in the document:");
+                    String replace_word = fileScanner.nextLine();
+                    file_Handling.replaceFile(filename, bodyContext, replace_word);
+
                 // default:
                 //     break;
                 

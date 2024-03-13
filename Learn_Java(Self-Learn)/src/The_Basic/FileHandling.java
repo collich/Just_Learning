@@ -45,7 +45,7 @@ public class FileHandling {
         }
     }
 
-    public void replaceFile(String filename){
+    public void replaceFile(String filename, String bodyContext, String replace_word){
         try {
             BufferedReader rf = new BufferedReader(new FileReader(filename));
             StringBuilder buildStrings = new StringBuilder();
@@ -55,7 +55,9 @@ public class FileHandling {
                 buildStrings.append(line);
             }
             rf.close();
-            System.out.println(buildStrings);
+            String textString = buildStrings.toString();
+            String convert = textString.toString().replace(bodyContext, replace_word);
+            System.out.println(convert);
 
         } catch (Exception e) {
             // TODO: handle exception
