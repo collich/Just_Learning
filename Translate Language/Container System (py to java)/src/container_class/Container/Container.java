@@ -38,22 +38,22 @@ public class Container {
     }
     
     // Setter Methods
-    public void getContainerID(int containerID){
+    public void setContainerID(int containerID){
         this.containerID = containerID;
     }
-    public void getWeight(float weight){
+    public void setWeight(float weight){
         this.weight = weight;
     }
-    public void getDestinationPort(String destinationPort){
+    public void setDestinationPort(String destinationPort){
         this.destinationPort = destinationPort;
     }
-    public void getRow(int row){
+    public void setRow(int row){
         this.row = row;
     }
-    public void getColumn(int column){
+    public void setColumn(int column){
         this.column = column;
     }
-    public void getStack(int stack){
+    public void setStack(int stack){
         this.stack = stack;
     }
 
