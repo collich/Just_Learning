@@ -1,20 +1,20 @@
-package classes;
+package container_class.Container;
 
 public class Container {
     private int containerID;
     private float weight;
-    private int destinationPort;
+    private String destinationPort;
     private int row;
     private int column;
     private int stack;
 
-    public Container(int containerID, float weight, int destinationPort){
+    public Container(int containerID, float weight, String destinationPort){
         this.containerID = containerID;
         this.weight = weight;
         this.destinationPort = destinationPort;
         this.row = 0;
-        self.column = 0;
-        self.stack = 0;
+        this.column = 0;
+        this.stack = 0;
     }
 
     // Getter Methods
@@ -24,7 +24,7 @@ public class Container {
     public float getWeight(){
         return this.weight;
     }
-    public int getDestinationPort(){
+    public String getDestinationPort(){
         return this.destinationPort;
     }
     public int getRow(){
@@ -44,7 +44,7 @@ public class Container {
     public void getWeight(float weight){
         this.weight = weight;
     }
-    public void getDestinationPort(int destinationPort){
+    public void getDestinationPort(String destinationPort){
         this.destinationPort = destinationPort;
     }
     public void getRow(int row){
@@ -57,4 +57,9 @@ public class Container {
         this.stack = stack;
     }
 
+    // Extra methods
+    public void print(){
+        String result = String.format("Container: %d Weight: %.2f Destination Port: %s Row: %d Column: %d Stack: %d", getContainerID(), getWeight(), getDestinationPort(), getRow(), getColumn(), getStack());
+        System.out.println(result);
+    }
 }
